@@ -1,3 +1,5 @@
+import { getCSS } from "./common.js";
+
 async function quantidadeUsuarios() {
     const url = 'https://raw.githubusercontent.com/guilhermeomrails/api/main/numero-usuarios.json'
     const res = await fetch(url)
@@ -14,10 +16,11 @@ async function quantidadeUsuarios() {
       y: quantidadeDeUsuarios,
       type: 'bar',
       marker: {
-        color: getComputedStyle(document.body).getPropertyValue('--primary-color')
+        color: getCSS('--primary-color')
       }
     }
   ]
+  
   const grafico = document.createElement('div')
 grafico.className = 'grafico'
 document.getElementById('graficos-container').appendChild(grafico)
