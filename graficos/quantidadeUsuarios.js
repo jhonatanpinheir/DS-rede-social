@@ -25,3 +25,12 @@ async function quantidadeUsuarios() {
 grafico.className = 'grafico'
 document.getElementById('graficos-container').appendChild(grafico)
 Plotly.newPlot(grafico, data)
+
+const layout = {
+    plot_bgcolor: getCSS('--bg-color'),
+    paper_bgcolor: getCSS('--bg-color')
+}
+
+Plotly.newPlot(grafico, data, layout)
+
+
